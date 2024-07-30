@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpdipenidaesr"]
+
+[ext_resource type="Script" path="res://scenes/element.gd" id="1_y07he"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j11v"]
+size = Vector2(52, 427)
+
+[node name="Element" type="StaticBody2D"]
+z_index = 7
+input_pickable = true
+script = ExtResource("1_y07he")
+
+[node name="Color" type="ColorRect" parent="."]
+offset_right = 52.0
+offset_bottom = 427.0
+mouse_filter = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(26, 213.5)
+shape = SubResource("RectangleShape2D_4j11v")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://be4htdia1cxph"]
+
+[ext_resource type="FontFile" uid="uid://clwah6xai82un" path="res://fonts/Kanit-SemiBold.ttf" id="1_52paw"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_fnha5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_flaja"]
+line_spacing = -10.0
+font = ExtResource("1_52paw")
+font_size = 32
+font_color = Color(1, 0.133333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltk3h"]
+font = ExtResource("1_52paw")
+font_size = 32
+font_color = Color(0.798754, 0.000504795, 0.800069, 1)
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fnha5")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.980392, 0.980392, 0.980392, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 337.0
+offset_bottom = 63.0
+text = "Color Imposter
+"
+label_settings = SubResource("LabelSettings_flaja")
+
+[node name="LevelText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 36.0
+offset_bottom = 137.0
+grow_horizontal = 2
+text = "Level 0
+Too easy to be a real level ..."
+label_settings = SubResource("LabelSettings_ltk3h")
+horizontal_alignment = 1

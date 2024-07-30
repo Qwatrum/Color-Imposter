@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://big3nkv1b4ocw"]
+
+[ext_resource type="FontFile" uid="uid://clwah6xai82un" path="res://fonts/Kanit-SemiBold.ttf" id="1_8mbqr"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_15mv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7ftc"]
+font = ExtResource("1_8mbqr")
+font_size = 32
+font_color = Color(1, 0.133333, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wijg0"]
+font = ExtResource("1_8mbqr")
+font_size = 32
+font_color = Color(0.56612, 0.000236129, 0.567077, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0s20"]
+font = ExtResource("1_8mbqr")
+font_size = 32
+font_color = Color(0.798754, 0.000506336, 0.800069, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j8na"]
+bg_color = Color(0.798754, 0.000504795, 0.800069, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.897441, 0.000656503, 0.898908, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1ml"]
+bg_color = Color(0.660181, 0.000331043, 0.661283, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.56612, 0.000236129, 0.567077, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_bgi5o"]
+Button/colors/font_color = Color(0.980392, 0.980392, 0.980392, 1)
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_8mbqr")
+Button/styles/hover = SubResource("StyleBoxFlat_1j8na")
+Button/styles/normal = SubResource("StyleBoxFlat_ys1ml")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_15mv8")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.980392, 0.980392, 0.980392, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_top = 133.0
+offset_right = 108.0
+offset_bottom = 182.0
+grow_horizontal = 2
+text = "Color Imposter"
+label_settings = SubResource("LabelSettings_o7ftc")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -422.0
+offset_top = -82.0
+offset_right = 423.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click the different looking color
+to move to the next level!"
+label_settings = SubResource("LabelSettings_wijg0")
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 211.0
+offset_right = 344.0
+offset_bottom = 260.0
+rotation = -0.366519
+text = "Made by Qwatrum!"
+label_settings = SubResource("LabelSettings_m0s20")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 426.0
+offset_right = 711.0
+offset_bottom = 510.0
+theme = SubResource("Theme_bgi5o")
+text = "START"
+
+[node name="Question" type="Label" parent="."]
+offset_left = 622.0
+offset_top = 329.0
+offset_right = 1174.0
+offset_bottom = 378.0
+rotation = 0.445059
+text = "How many levels do you complete???"
+label_settings = SubResource("LabelSettings_m0s20")
+
+[connection signal="button_down" from="Start" to="." method="_on_start_button_down"]

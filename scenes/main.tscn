@@ -118,6 +118,7 @@ theme = SubResource("Theme_bgi5o")
 text = "START"
 
 [node name="Question" type="Label" parent="."]
+layout_mode = 0
 offset_left = 622.0
 offset_top = 329.0
 offset_right = 1174.0

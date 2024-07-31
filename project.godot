@@ -13,7 +13,9 @@ config_version=5
 config/name="Color Imposter"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.980392, 0.980392, 0.980392, 1)
+boot_splash/image="res://assets/icon.png"
+config/icon="res://assets/icon.png"
 
 [rendering]
 
